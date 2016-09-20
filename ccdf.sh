@@ -1,3 +1,18 @@
+#!/bin/bash
+
+##
+## It is ineffective to plot cdf (Cumulative Distribution Function) or CCDF
+## (Complementary Cumulative Distribution Function) from several hundreds of
+## thousands data points.
+##
+## This script effectively extracts cdf, ccdf, as well as pdf data from bulks
+## of data points.
+## 
+## You can use this script, for example, like this:
+##
+##      for i in `seq 100000`; do while :; do ran=$RANDOM; ((ran < 32760)) && echo $(((ran%100)+1)) && break; done; done | ./ccdf.sh 
+##
+##
 sort -n | \
 uniq -c | \
 awk '	{
