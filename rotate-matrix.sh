@@ -22,7 +22,7 @@ awk '{
 		for (y = max_nr; y >= 1; --y) {
 			printf("%s ", vector[x, y]);
 		}
-	
+
 		print("\n");
 	}
 }' $1
